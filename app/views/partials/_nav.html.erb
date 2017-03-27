@@ -1,0 +1,28 @@
+<nav>
+    <div class="nav-wrapper">
+      <%= link_to 'Lamb Naysh', root_path %>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><%= link_to 'New Post', new_post_path %></li>
+        <% if user_signed_in? %>
+          <li>
+          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+          </li>
+        <% else %>
+          <li>
+          <%= link_to('Login', new_user_session_path)  %>
+          </li>
+        <% end %>      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><%= link_to 'New Post', new_post_path %></li>
+        <% if user_signed_in? %>
+          <li>
+          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+          </li>
+        <% else %>
+          <li>
+          <%= link_to('Login', new_user_session_path)  %>
+          </li>
+        <% end %>      </ul>
+    </div>
+  </nav>
