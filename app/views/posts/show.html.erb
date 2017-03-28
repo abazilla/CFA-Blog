@@ -18,6 +18,7 @@
 
         <%= render 'comments/form', comment: @comment %>
         <br />
+        
         <% @comments.reverse.each do |comment|%>
         <%= link_to comment.user.email, '' %> <%= comment.created_at %>
         <p><%= comment.content %></p>

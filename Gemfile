@@ -21,6 +21,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'materialize-sass'
 gem 'omniauth-github'
+gem 'omniauth-facebook'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

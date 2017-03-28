@@ -7,9 +7,9 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '1c30195618fcf6f07671f4c2ee0fd341287237b098485443c83e7af35965c4a6a557f168edc523102aea2a934a5a137894900081af07713580ab922806a17928'
-  config.omniauth :github, 'GH_ID', 'GH_SECRET', :scope => 'user:email'
+  config.omniauth :github, ENV['GH_ID'], ENV['GH_SECRET'], :scope => 'user:email'
 
-  # config.omniauth :facebook, "FB_ID", "FB_SECRET"
+  config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"]
 
 
   # ==> Mailer Configuration
