@@ -1,19 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col s8 offset-s2">
+    <div class="card white z-depth-4">
+      <div class="card-content black-text">
+        <h4 class="card-title">Post #<%= @post.id %> -
+          <%= @post.title %></h4>
+          <h6>Written by: <%= link_to @post.user.email, "#" %></h6>
+          <br />
+          <p><%= @post.content %></p>
+          <br />
+          <div class="card-action">
+            <%= link_to 'Show', @post %>
+            <%= link_to 'Edit', edit_post_path(@post) %>
+            <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @post.user.email %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+        <%= render 'comments/form', comment: @comment %>
+        <br />
+        <% @comments.reverse.each do |comment|%>
+        <%= link_to comment.user.email, '' %> <%= comment.created_at %>
+        <p><%= comment.content %></p>
+        <br /><br />
+        <% end %>
+      </div>
+    </div>
+  </div>
