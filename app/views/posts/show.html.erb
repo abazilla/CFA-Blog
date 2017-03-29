@@ -12,22 +12,22 @@
             <%= link_to 'Show', @post %>
             <%= link_to 'Edit', edit_post_path(@post) %>
             <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= render 'partials/fb' %>
           </div>
 
 
-        <%= render 'comments/form', comment: @comment %>
-        <br />
+          <%= render 'comments/form', comment: @comment %>
+          <br />
 
-        <div class="col s10 offset-s1">
-          <% @comments.reverse.each do |comment|%>
-          <div class="card white">
-            <div class="card-content black-text">
-              <%= link_to comment.user.email, '' %> <%= comment.created_at %>
-              <p><%= comment.content %></p>
+            <% @comments.reverse.each do |comment|%>
+            <div class="card white z-depth-2">
+              <div class="card-content black-text">
+                <%= link_to comment.user.email, '' %> <%= comment.created_at %>
+                <p><%= comment.content %></p>
+              </div>
             </div>
-          </div>
-          <% end %>
-        </div>
+            <% end %>
         </div>
       </div>
     </div>
+  </div>
