@@ -22,7 +22,7 @@ gem 'devise'
 gem 'materialize-sass'
 gem 'omniauth-github'
 gem 'omniauth-facebook'
-
+gem 'friendly_id', '~> 5.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
