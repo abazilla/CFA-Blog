@@ -23,6 +23,8 @@ gem 'materialize-sass'
 gem 'omniauth-github'
 gem 'omniauth-facebook'
 gem 'friendly_id', '~> 5.1.0'
+gem 'rolify'
+gem 'pundit'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
